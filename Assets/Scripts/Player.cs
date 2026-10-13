@@ -1,10 +1,7 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // 1. ADD THIS LINE AT THE TOP
+using UnityEngine.InputSystem; 
 
-/*
-    This script provides jumping and movement in Unity 3D - Gatsby
-    Updated for the New Input System Package
-*/
+
 
 public class Player : MonoBehaviour
 {
@@ -45,7 +42,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // 2. MODIFIED: Reading movement inputs via the New Input System
+        
         if (Keyboard.current != null)
         {
             moveHorizontal = 0f;
@@ -59,7 +56,7 @@ public class Player : MonoBehaviour
 
         RotateCamera();
 
-        // 3. MODIFIED: Reading jump inputs via the New Input System
+        
         if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
         {
             Jump();
@@ -122,10 +119,10 @@ public class Player : MonoBehaviour
 {
     if (Mouse.current != null)
     {
-        // Vector2 reading is much more stable than raw frame delta values
+        
         Vector2 mouseDelta = Mouse.current.delta.ReadValue();
 
-        // We use Time.deltaTime to smooth out frame rate spikes
+        
         float horizontalRotation = mouseDelta.x * mouseSensitivity * 5f * Time.deltaTime;
         transform.Rotate(0, horizontalRotation, 0);
 

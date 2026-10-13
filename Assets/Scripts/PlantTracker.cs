@@ -9,7 +9,7 @@ public class PlantTracker : MonoBehaviour
     private int totalCollected = 0;
 
     [SerializeField] private int plantsNeeded = 5;
-    [SerializeField] private float messageDuration = 3f; // seconds the popup stays up
+    [SerializeField] private float messageDuration = 3f; 
 
     private string popupMessage = "";
     private float popupTimer = 0f;
@@ -43,7 +43,7 @@ public class PlantTracker : MonoBehaviour
             popupMessage = "You collected all " + plantsNeeded + " plants! Game over!";
             popupTimer = messageDuration;
             Debug.Log("Game over!");
-            // Time.timeScale = 0f; // optional: freeze the game
+          
         }
     }
 
